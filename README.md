@@ -1,66 +1,37 @@
-## Foundry
+# Transient Approvals
+This set of contract aims to extend current token standards with transient functionality.
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
-
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+## Contracts
+```ml
+tokens
+├─ TransientERC20 — "Extends the ERC20 token standard with transient functionality"
+├─ TransientERC721 — "Extends the ERC721 token standard with transient functionality"
+├─ TransientERC1155 — "Extends the ERC1155 token standard with transient functionality"
+├─ TransientWETH — "Extends the WETH token standard with transient functionality"
+├─ utils
+│  ├─ SafeTransientTransferLib — "Extends SafeTransferLib with transient functionality"
 ```
 
-### Test
+## Safety
 
-```shell
-$ forge test
+This is **experimental software** and is provided on an "as is" and "as available" basis.
+
+These contracts are **not designed with user safety** in mind but as a proof of concept:
+
+- There are implicit invariants these contracts expect to hold.
+- You should thoroughly read each contract you plan to use top to bottom.
+
+I **do not give any warranties** and **will not be liable for any loss** incurred through any use of this codebase.
+
+## Installation
+
+To install with [**Foundry**](https://github.com/gakonst/foundry):
+
+```sh
+forge install IssyPro101/transient-approvals
 ```
 
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+## Acknowledgements
+This repository is inspired by or directly modified from:
+ - [Solmate](https://github.com/transmissions11/solmate)
+ - [OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts)
